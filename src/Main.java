@@ -2,13 +2,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        DatabaseConnection db = new DatabaseConnection();
+//        DatabaseConnection db = new DatabaseConnection();
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter table name to print: ");
-        String tableName = scanner.nextLine();
+        Input.displayOptionsList();
 
-        db.printTable(tableName);
+
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Enter table name to print: ");
+//        String tableName = scanner.nextLine();
+//
+//        db.printTable(tableName);
 
         // test_user_table
 
