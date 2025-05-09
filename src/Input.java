@@ -4,10 +4,37 @@ import java.util.Scanner;
 
 public class Input {
 
-    public static void displayOptionsList() {
-        int selection = selectorList("Enter a number:", "Artists", "Playlists", "Quit");
-        System.out.printf("You selected: %d", selection);
+    public static void userInput() {
+        DatabaseAPI dbAPI = new DatabaseAPI();
 
+        // we start with outputting the main dialog window and then most stuff is based off this value
+        int selection = displayMainMenu();
+        System.out.println(selection);
+
+        switch (selection) {
+            case 1:
+                System.out.println("You entered 1");
+                String artistName = stringInput("Enter artist name: ");
+                dbAPI.searchArtist(artistName);
+
+            case 2:
+                String playlistName = stringInput("Enter playlist name: ");
+                dbAPI.deletePlaylist(playlistName);
+        }
+
+
+    }
+
+
+    public static int displayArtistsMenu() {
+        String artist = stringInput("Enter an artist: ");
+
+        return 0;
+
+    }
+
+    public static int displayMainMenu() {
+        return selectorList("Enter a number:", "Artists", "Playlists", "Quit");
 
     }
 
@@ -45,6 +72,12 @@ public class Input {
                 }
             }
         }
+    }
+
+    private static String stringInput(String title) {
+        System.out.println(title);
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
     }
 
 }

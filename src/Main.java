@@ -1,10 +1,8 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
 //        DatabaseConnection db = new DatabaseConnection();
 
-        Input.displayOptionsList();
+        Input.userInput();
 
 
 //        Scanner scanner = new Scanner(System.in);
